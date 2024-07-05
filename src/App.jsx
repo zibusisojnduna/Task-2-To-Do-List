@@ -3,17 +3,23 @@ import "./styles.css"
 
 export default function App() {
  const [newItem, setNewItem] = useState("")
- const [todos, setTedos] = useState([])
-//  setNewItem("")
+ const [todos, setTodos] = useState([])
 
-function handleSubmit(e) {
+ function handleSubmit(e){
   e.preventDefault()
 
-  setTedos([...todos,])
-}
+  setTodos((currentTodos) => {
+    
+  })
+    [todos, 
+      {id: crypto.randomUUID(), title: newItem, completed:
+        false},
+      ])
 
-  return(
-  <>  <form onSubmit className="new-item-form">
+ }
+
+return(
+  <>  <form onSubmit={handleSubmit} className="new-item-form">
     <div className="form-row">
       <label htmlFor="item">New Item</label>
       <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" id="item" />
@@ -31,7 +37,7 @@ function handleSubmit(e) {
     </li>
     <li>
       <lable> 
-        <input type="checkbox" />
+        <input type="chexkbox" />
         Item 2
       </lable>
       <button className="btn btn-danger">Delete</button>
@@ -43,4 +49,6 @@ function handleSubmit(e) {
   </>
 
 )
-} 
+}
+
+  
